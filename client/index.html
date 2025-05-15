@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Shop</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="splash">🛍️ Welcome to the Modern Shop</div>
+    <div id="root" style="display:none;"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <script>
+      setTimeout(() => {
+        document.getElementById("splash").style.display = "none";
+        document.getElementById("root").style.display = "block";
+      }, 1000);
+    </script>
+  </body>
+</html>

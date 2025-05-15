@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  server:
+    build:
+      context: ./server
+    container_name: server
+    ports:
+      - "3001:3001"
+    depends_on:
+      - redis
+    networks:
+      - app-net
+
+  client:
+    build:
+      context: ./client
+    container_name: client
+    ports:
+      - "5173:80"
+    networks:
+      - app-net
+
+networks:
+  app-net:
+    driver: bridge
